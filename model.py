@@ -47,7 +47,7 @@ def find_sentiment(review,max_len=40):
     with open('tokenizer.pickle', 'rb') as handle:
         tokenizer = pickle.load(handle)
         
-    loaded_model = tf.keras.models.load_model('my_saved_model')
+    loaded_model = pickle.load(open("my_saved_model", 'rb'))
     
     model_input=cleaned_review(review)
     seq = tokenizer.texts_to_sequences([model_input])
