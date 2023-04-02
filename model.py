@@ -53,7 +53,7 @@ def find_sentiment(review,max_len=40):
     seq = tokenizer.texts_to_sequences([model_input])
     padded = pad_sequences(seq, maxlen=max_len)
     pred = loaded_model.predict(padded)
-    label = ['Negative','Neutral','Positive']
+    label = ['Positive','Negative','Neutral']
     return label[np.argmax(pred)]
 
 # test
